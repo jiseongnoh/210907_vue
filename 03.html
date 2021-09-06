@@ -1,0 +1,46 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="app">
+        <!-- <p>{{message}}</p> -->
+        <!-- <button v-on:click="sayHello">Greeting Button</button> -->
+    <div>
+      <h4>{{ reversedTitle }}</h4>
+      <h4>공급대가 : {{ price }}</h4>
+      <input type="number" v-model="price">
+      <h4>공급가액 : {{ supplyAmount.toFixed() }}</h4>
+      <h4>부가가치세 : {{ valueAddedTax.toFixed() }}</h4>
+    </div>
+        
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+    <script type="text/javascript">
+ // 2.3 computed 프로퍼티(Property) 
+    var vm = new Vue({
+        el: '#app',
+        data : {
+          title:'캡틴 마블', 
+          price:10000
+        },
+        computed: {
+          reversedTitle: function () {
+            return this.title.split('').reverse().join('')
+          },
+          supplyAmount: function() {
+            return (this.price / 11)*10
+          },
+          valueAddedTax: function () {
+            return (this.price / 11)
+          }
+        }   
+    })   
+
+
+    </script>
+</body>
+</html>
