@@ -1,0 +1,54 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <p>count: {{ count }}</p>
+    <p>second count: {{ secondCount }}</p>
+    <p>computed Double: {{ cDouble }}</p>
+    <p>computed Half: {{ cHalf }}</p>
+    <p>methods Double: {{ mDouble() }}</p>
+    <p>methods Half: {{ mHalf() }}</p>
+    <button v-on:click="count++">클릭</button>
+    <button v-on:click="secondCount++">클릭</button>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        count: 0,
+        secondCount: 0,
+        thirdCount: 0
+      },
+      computed: {
+        cDouble: function () {
+          console.log('Computed double')
+          return this.count * 2
+        },
+        cHalf: function () {
+          console.log('Computed half')
+          return this.count / 2
+        }
+      },
+      methods: {
+        mDouble: function () {
+          console.log('methods double')
+          return this.count * 2
+        },
+        mHalf: function () {
+          console.log('methods half')
+          return this.count / 2
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>
