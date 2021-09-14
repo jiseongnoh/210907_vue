@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>진법 변환</title>
+</head>
+<body>
+  <div id="app">
+      10진수: <input type = "number" v-model.number = "dec">
+      16진수: <input type = "text" v-model = "hex">
+      2진수: <input type = "text" v-model= "bin">
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    var vm = new Vue({
+      el:'#app',
+      data: {
+        dec:0,
+        hex:0x0,
+        bin:0b0,
+      },
+
+      watch: {
+        dec : function(val) {
+          this.dec = val;
+          this.hex = val.toString(16);
+          this.bin = val.toString(2);
+        
+        },
+        hex : function (val) {
+          this.bin = parseInt(val, 16).toString(2);
+          this.hex= val;
+          this.dec = parseInt(val, 16);
+        },
+        bin : function (val) {
+          this.bin = val;
+          this.dec = parseInt(val, 2);
+          this.hex = parseInt(val, 2).toString(16);
+        }
+      
+      }
+
+    })
+  </script>  
+</body>
+</html>
