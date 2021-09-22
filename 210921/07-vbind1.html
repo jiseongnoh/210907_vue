@@ -1,0 +1,41 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .color {
+      color: teal;
+
+    }
+
+    .font {
+      color: blue;
+      font-size: 40px;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="app">
+    <h1 v-bind:class="apply">동적으로 class 속성 적용 </h1>
+    <input type="checkbox" v-model="apply.color">
+    <span>h1 엘리먼트(Element) 색 바꾸기</span>
+    <input type="checkbox" v-model="apply.font">
+    <span>h1 엘리먼트(Element) 색상과 글자 크기 바꾸기</span>
+    </p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data: {
+      apply: { color: false, font: false },
+      }
+    })
+  </script>
+</body>
+
+</html>

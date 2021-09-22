@@ -1,0 +1,37 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+
+<body>
+  <div id="app">
+    <button v-on:click="fontSize++">
+      글자 크기 늘리기
+    </button>
+    <button v-on:click="fontSize--">
+      글자 크기 줄이기
+    </button>
+
+    <p v-bind:style="{  fontSize: fontSize + 'px' }">
+      Font size is: {{ fontSize }}
+    </p>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el: '#app',
+      data() {
+        return {
+          fontSize: 10,
+          color: 'blue',
+        }
+      }
+    })
+  </script>
+</body>
+
+</html>

@@ -1,0 +1,53 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    p{
+      border: 4px solid teal;
+      background: yellow;
+    }
+  </style>
+  
+</head>
+<body>
+
+  <div id="app">
+    <h3>v-if else-if directive를 이용한 조건처리</h3>
+    <p v-if="error">에러 발생 </p>
+    <p v-show="error">에러 발생 2</p>
+    <p v-show="lecture">2021년 2학기 웹프로그래밍2 수업 중입니다.</p>
+
+    <button v-on:click="errorToggle">에러 발생기: {{ this.error }} </button> 
+    <!-- <button v-on:click="lectureToggle">수업 중: {{ this.lecture }} </button> -->
+  </div>
+
+
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
+  <script>
+
+    new Vue({
+      el:'#app',
+      data: {
+        error: false,
+        lecture: false,
+      },
+      methods: {
+        errorToggle() {
+          this.error = !this.error
+          if(this.error == false) {
+            this.lecture = true;
+          } else {
+            this.lecture = false;
+          }
+        },
+        // lectureToggle() {
+        // this.lecture = !this.lecture
+        // }
+      }
+    })
+  </script>
+</body>
+</html>
