@@ -16,8 +16,8 @@
       글자 크기 줄이기
     </button>
 
-    <p v-bind:style="{  fontSize: fontSize + 'px' }">
-      Font size is: {{ fontSize }}
+    <p v-bind:style="{ textAlign: textAlign, color: color, fontSize: fontSize + 'px' }">
+      Font size is: {{ fontSize + 'px'}}
     </p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2.6.6/dist/vue.js"></script>
@@ -26,8 +26,9 @@
       el: '#app',
       data() {
         return {
-          fontSize: 10,
-          color: 'blue',
+          fontSize: 20,
+          color: 'green',
+          textAlign: 'center',
         }
       }
     })
