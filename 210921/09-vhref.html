@@ -1,0 +1,47 @@
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    .imgdiv{
+      margin:4px;
+      border: 2px solid rgba(0, 0, 255, 0.5);
+      display:inline-block;
+    }
+    img{
+      width:240px;
+      height:180px;
+      padding: 3px;
+    }
+    a{
+      text-align: center;   
+      display:block;   
+    }
+  </style>
+</head>
+<body>
+  <div id="app">
+    <div class="imgdiv" v-for="image in images" :key="image.text">
+      <a v-bind:href="image.url">{{image.text + message}}</a>
+      <img v-bind:src="image.src" />
+    </div>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <script>
+    new Vue({
+      el:'#app',
+      data:{
+        images: [
+            {text:'베니스', src:'./img/venice.jpg',url:'https://www.italyguides.it/en/veneto/venice'},
+            {text:'비엔나', src:'./img/vienna.jpg', url:'https://www.austria.info/kr/where-to-go/cities/wien'},
+            {text:'파리', src:'./img/paris.jpg', url:'https://www.louvre.fr/en/homepage'},
+            {text:'프라하', src:'./img/praha.jpg', url:'https://www.prague.eu/en'},
+        ],
+        message: "로 랜선 여행을 떠나요"
+      }      
+    })
+  </script>
+</body>
+</html>
