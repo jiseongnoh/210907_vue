@@ -36,6 +36,7 @@
     methods : {
       handleEvent($e) {
         this.info = $e.type;
+        setTimeout(() =>  this.name = "오늘 날씨는 맑은 후 흐림", 1000);
       }
     }
   })
