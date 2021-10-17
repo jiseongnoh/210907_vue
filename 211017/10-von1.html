@@ -1,0 +1,35 @@
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/materialize/1.0.0/css/materialize.min.css">
+
+  <title>Document</title>
+</head>
+
+<div id="app">
+  <div class="container">
+    <div class="card-panel teal lighten-2">
+      <h5 v-on:click="name= '오늘 날씨는 맑음'">{{ name }}</h3>
+    </div>
+  </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+<script>
+
+  var vm = new Vue({
+    el:'#app',
+    data: function () {
+      return {
+        name:"오늘 날씨는",
+      }
+    }
+  })
+
+</script>
+</body>
+
+</html>
